@@ -1,3 +1,3 @@
 # KotlinDemoAplicationUI
-UI design in KOTLIN for demo 
+E-Commerce UI in KOTLIN 
 
