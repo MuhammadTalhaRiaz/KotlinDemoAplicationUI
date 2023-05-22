@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/firstItem"
-        android:title="First Item" />
-    <item
-        android:id="@+id/secondtItem"
-        android:title="Second Item" />
-    <item
-        android:id="@+id/thirdItem"
-        android:title="Third Item" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Dashboard">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/ic_baseline_home_24">
+        </item>
+
+        <item
+            android:title="Profile"
+            android:id="@+id/_person"
+            android:icon="@drawable/ic_baseline_person_24">
+        </item>
+
+        <item
+            android:title="QR Scan"
+            android:id="@+id/scan_qr"
+            android:icon="@drawable/baseline_qr_code_scanner_24">
+        </item>
+
+    <item android:title="General"
+        android:checkableBehavior="single">
+        <menu>
+            <item android:title="Profile"
+                android:id="@+id/profile"
+                android:icon="@drawable/ic_baseline_person_24"/>
+
+            <item android:title="Settings"
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_baseline_settings_24"/>
+        </menu>
+    </item>
+
 </menu>

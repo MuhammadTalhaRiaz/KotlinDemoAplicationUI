@@ -45,11 +45,11 @@ class GridFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_grid, container, false)
         courseGRV = view.findViewById(R.id.idGRV)
         courseList = ArrayList<GridViewModal>()
-        courseList = courseList + GridViewModal("C++", R.drawable.slide1)
-        courseList = courseList + GridViewModal("Java", R.drawable.slide2)
-        courseList = courseList + GridViewModal("Android", R.drawable.slide3)
-        courseList = courseList + GridViewModal("Python", R.drawable.slide1)
-        courseList = courseList + GridViewModal("Javascript", R.drawable.slide2)
+        courseList = courseList + GridViewModal("Title", R.drawable.slide1)
+        courseList = courseList + GridViewModal("Title", R.drawable.slide1)
+        courseList = courseList + GridViewModal("Title", R.drawable.slide1)
+        courseList = courseList + GridViewModal("Title", R.drawable.slide1)
+        courseList = courseList + GridViewModal("Title", R.drawable.slide1)
 
         val courseAdapter = GridRVAdapter(courseList = courseList, requireContext())
         courseGRV.adapter = courseAdapter

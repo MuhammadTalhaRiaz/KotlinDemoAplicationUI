@@ -12,20 +12,11 @@ import downlaod.video.kotlinaplication.R
 
 class HorizontalRecyclerViewAdapter : RecyclerView.Adapter<HorizontalRecyclerViewAdapter.ViewHolder>() {
 
-    private val kode = arrayOf("d116df5",
-        "36ffc75", "f5cfe78", "5b87628",
-        "db8d14e", "9913dc4", "e120f96",
-        "466251b")
+    private val kategori = arrayOf("Title", "Title",
+        "Title", "Title",
+        "Title", "Title",
+        "Title", "Title")
 
-    private val kategori = arrayOf("Status COde 2", "Status COde 2",
-        "Status COde 2", "Status COde 2",
-        "Status COde 2", "Status COde 2",
-        "Status COde 2", "Status COde 2")
-
-    private val isi = arrayOf("pertanyaan 9",
-        "pertanyaan 11", "pertanyaan 17", "test forum",
-        "pertanyaan 12", "pertanyaan 18", "pertanyaan 20",
-        "pertanyaan 21")
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var itemKode: TextView
@@ -58,7 +49,7 @@ class HorizontalRecyclerViewAdapter : RecyclerView.Adapter<HorizontalRecyclerVie
     }
 
     override fun getItemCount(): Int {
-        return kode.size
+        return kategori.size
     }
 
 }

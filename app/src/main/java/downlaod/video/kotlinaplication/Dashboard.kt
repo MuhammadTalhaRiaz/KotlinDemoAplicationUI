@@ -1,7 +1,9 @@
 package downlaod.video.kotlinaplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import android.widget.Toolbar
@@ -25,7 +27,7 @@ class Dashboard : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
         toolbar.title = "Dashboard"
         setSupportActionBar(toolbar)
-
+        bottomnavigation()
         drawerLayout = findViewById(R.id.drawerLayout)
         // Call findViewById on the NavigationView
         navView = findViewById(R.id.navView)
@@ -41,15 +43,20 @@ class Dashboard : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.firstItem -> {
-                    Toast.makeText(this, "My Profile", Toast.LENGTH_SHORT).show()
+                R.id.nav_home -> {
+                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                     true
                 }
-                R.id.secondtItem -> {
-                    Toast.makeText(this, "People", Toast.LENGTH_SHORT).show()
+                R.id._person -> {
+                    Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                     true
                 }
-                R.id.thirdItem -> {
+
+                R.id.scan_qr -> {
+                    Toast.makeText(this, "QR Scanner", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.settings -> {
                     Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
                     true
                 }
@@ -58,8 +65,28 @@ class Dashboard : AppCompatActivity() {
                 }
             }
         }
-        getdata()
-        bottomnavigation()
+
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.topbar_menu, menu)
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here.
+        val id = item.getItemId()
+
+        if (id == R.id.nav_cart) {
+            val Intent  = Intent(this,ShoppingCart::class.java)
+            startActivity(Intent)
+            return true
+        }
+        if (id == R.id.notifications) {
+            Toast.makeText(this, "Item Two Clicked", Toast.LENGTH_LONG).show()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+
     }
     override fun onSupportNavigateUp(): Boolean {
         drawerLayout.openDrawer(navView)
@@ -75,16 +102,17 @@ class Dashboard : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
     fun getdata(){
         username  = intent.getStringExtra("userName").toString()
     }
     fun bottomnavigation() {
+        loadFragment(ChatFragment())
         bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomNav.setOnItemSelectedListener {
             val fragment: Fragment
             when (it.itemId) {
                 R.id.home -> {
-
                     loadFragment(ChatFragment())
                     true
                 }
@@ -97,14 +125,15 @@ class Dashboard : AppCompatActivity() {
                     loadFragment(fragment)
                     true
                 }
-                else -> true
+
+                else -> false
             }
         }
 
         bottomNav.setOnItemReselectedListener { item ->
         when (item.itemId) {
             R.id.home -> {
-                Toast.makeText(this, "Home Item reselected", Toast.LENGTH_SHORT).show()
+               loadFragment(ChatFragment())
             }
             R.id.message -> {
                 Toast.makeText(this, "Message Item reselected", Toast.LENGTH_SHORT).show()
@@ -121,6 +150,7 @@ private  fun loadFragment(fragment: Fragment){
         transaction.replace(R.id.container,fragment)
         transaction.commit()
     }
+
 }
 
 

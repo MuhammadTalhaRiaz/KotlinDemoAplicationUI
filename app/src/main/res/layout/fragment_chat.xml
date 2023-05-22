@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context=".ChatFragment">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
     <!-- TODO: Update blank fragment layout -->
   <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,6 +34,8 @@
               android:layout_marginTop="16dp"
               android:layout_marginEnd="8dp"
               android:text="Slider"
+              android:textSize="18dp"
+              android:textStyle="bold"
               app:layout_constraintEnd_toEndOf="parent"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
@@ -75,7 +75,9 @@
               android:layout_marginStart="8dp"
               android:layout_marginTop="8dp"
               android:layout_marginEnd="8dp"
-              android:text="Horizontal List"
+              android:text="Horizontal Category List"
+              android:textStyle="bold"
+              android:textSize="18dp"
               app:layout_constraintEnd_toEndOf="parent"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
@@ -110,7 +112,9 @@
               android:layout_marginStart="8dp"
               android:layout_marginTop="16dp"
               android:layout_marginEnd="8dp"
-              android:text="Main Data"
+              android:textStyle="bold"
+              android:textSize="18dp"
+              android:text="Most Liked Category"
               app:layout_constraintEnd_toEndOf="parent"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
@@ -143,7 +147,7 @@
                       android:layout_marginTop="8dp"
                       android:layout_marginEnd="8dp"
                       android:contentDescription="TODO"
-                      android:src="@drawable/ic_baseline_message_24"
+                      android:src="@drawable/bike2"
                       app:layout_constraintEnd_toEndOf="parent"
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toTopOf="parent" />
@@ -155,7 +159,9 @@
                       android:layout_marginStart="8dp"
                       android:layout_marginTop="8dp"
                       android:layout_marginEnd="8dp"
-                      android:text="Example"
+                      android:text="Title"
+                      android:textColor="@color/teal_700"
+                      android:textSize="16dp"
                       app:layout_constraintEnd_toStartOf="@+id/imageView_like"
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -166,7 +172,9 @@
                       android:layout_height="wrap_content"
                       android:layout_marginStart="8dp"
                       android:layout_marginTop="8dp"
-                      android:text="DESC"
+                      android:text="Description"
+                      android:textColor="@color/black"
+                      android:textSize="14dp"
                       app:layout_constraintEnd_toStartOf="@+id/imageView_like"
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toBottomOf="@+id/text_example" />
@@ -178,8 +186,9 @@
                       android:layout_gravity="center"
                       android:layout_marginTop="16dp"
                       android:layout_marginEnd="8dp"
+                      app:tint="@color/teal_700"
                       android:contentDescription="TODO"
-                      android:src="@drawable/ic_baseline_message_24"
+                      android:src="@drawable/baseline_thumb_up_24"
                       app:layout_constraintEnd_toEndOf="parent"
                       app:layout_constraintTop_toBottomOf="@+id/imageView" />
               </androidx.constraintlayout.widget.ConstraintLayout>
@@ -195,10 +204,10 @@
               android:foreground="?selectableItemBackground"
               app:layout_constraintBottom_toBottomOf="parent"
               app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/text_dashboardheading"
               card_view:cardBackgroundColor="#FFFF"
               card_view:cardCornerRadius="12dp"
-              card_view:contentPadding="10dp"
-              card_view:layout_constraintTop_toTopOf="parent">
+              card_view:contentPadding="10dp">
 
               <androidx.constraintlayout.widget.ConstraintLayout
                   android:layout_width="match_parent"
@@ -213,7 +222,7 @@
                       android:layout_marginTop="8dp"
                       android:layout_marginEnd="8dp"
                       android:contentDescription="TODO"
-                      android:src="@drawable/ic_baseline_message_24"
+                      android:src="@drawable/bike1"
                       app:layout_constraintEnd_toEndOf="parent"
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toTopOf="parent" />
@@ -225,7 +234,9 @@
                       android:layout_marginStart="8dp"
                       android:layout_marginTop="8dp"
                       android:layout_marginEnd="8dp"
-                      android:text="Example"
+                      android:text="Title"
+                      android:textColor="@color/teal_700"
+                      android:textSize="16dp"
                       app:layout_constraintEnd_toStartOf="@+id/imageView_like1"
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toBottomOf="@+id/imageView1" />
@@ -236,7 +247,9 @@
                       android:layout_height="wrap_content"
                       android:layout_marginStart="8dp"
                       android:layout_marginTop="8dp"
-                      android:text="DESC"
+                      android:text="Description"
+                      android:textColor="@color/black"
+                      android:textSize="14dp"
                       app:layout_constraintEnd_toStartOf="@+id/imageView_like1"
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toBottomOf="@+id/text_example1" />
@@ -249,7 +262,8 @@
                       android:layout_marginTop="16dp"
                       android:layout_marginEnd="8dp"
                       android:contentDescription="TODO"
-                      android:src="@drawable/ic_baseline_message_24"
+                      app:tint="@color/teal_700"
+                      android:src="@drawable/baseline_thumb_up_24"
                       app:layout_constraintEnd_toEndOf="parent"
                       app:layout_constraintTop_toBottomOf="@+id/imageView1" />
               </androidx.constraintlayout.widget.ConstraintLayout>
@@ -259,6 +273,10 @@
       <androidx.constraintlayout.widget.ConstraintLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:layout_marginBottom="60dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/card_const1">
 
           <androidx.cardview.widget.CardView
@@ -289,7 +307,7 @@
                       android:layout_marginStart="8dp"
                       android:layout_marginTop="8dp"
                       android:contentDescription="TODO"
-                      android:src="@drawable/ic_baseline_message_24"
+                      android:src="@drawable/bike1"
                       app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintTop_toTopOf="parent" />
 
@@ -299,7 +317,7 @@
                       android:layout_height="wrap_content"
                       android:layout_marginStart="32dp"
                       android:layout_marginTop="20dp"
-                      android:text="Example"
+                      android:text="Description"
                       app:layout_constraintEnd_toEndOf="parent"
                       app:layout_constraintHorizontal_bias="0.0"
                       app:layout_constraintStart_toEndOf="@+id/imageView_deatil"
@@ -311,7 +329,10 @@
                       android:layout_height="wrap_content"
                       android:layout_marginStart="32dp"
                       android:layout_marginTop="8dp"
-                      android:text="Example"
+                      android:text="Title"
+                      android:textStyle="bold"
+                      android:textColor="@color/teal_700"
+                      android:textSize="18dp"
                       app:layout_constraintEnd_toEndOf="parent"
                       app:layout_constraintStart_toEndOf="@+id/imageView_deatil"
                       app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -321,6 +342,5 @@
           </androidx.cardview.widget.CardView>
       </androidx.constraintlayout.widget.ConstraintLayout>
       </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
-</FrameLayout>
+</ScrollView>

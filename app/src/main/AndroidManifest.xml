@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinAplication"
         tools:targetApi="33">
+
         <activity
-            android:name=".ComposeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_compose"
-            android:theme="@style/Theme.KotlinAplication" />
+            android:name=".ShoppingCart"
+            android:exported="false" />
+       
         <activity
             android:name=".Dashboard"
             android:exported="false" />
