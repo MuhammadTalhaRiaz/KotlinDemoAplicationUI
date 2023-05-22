@@ -19,24 +19,12 @@ class CartListAdapter : RecyclerView.Adapter<CartListAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
      var title: TextView
      var price: TextView
-//     var add_item: ImageView
-//     var sub_item: ImageView
-//     var counttxt: TextView
         init {
             title = itemView.findViewById(R.id.order_title)
             price = itemView.findViewById(R.id.order_price)
-//            add_item = itemView.findViewById(R.id.imageView2)
-//            sub_item = itemView.findViewById(R.id.imageView1)
-//            counttxt = itemView.findViewById(R.id.textViewCount1)
-//            counttext = counttxt.text.toString()
-//            add_item.setOnClickListener{
-//                itemAddClick(itemView)
-//            }
-//            sub_item.setOnClickListener{
-//                itemSubtractClick(itemView)
-//            }
+//
             itemView.setOnClickListener {
-                var position: Int = getAdapterPosition()
+                var position: Int = adapterPosition
                 val context = itemView.context
 //                val intent = Intent(context, HomeFragment::class.java).apply {
 //                    putExtra("NUMBER", position)
@@ -57,17 +45,9 @@ class CartListAdapter : RecyclerView.Adapter<CartListAdapter.ViewHolder>() {
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
         viewHolder.title.text = Title[i]
         viewHolder.price.text = Price[i]
-//        viewHolder.counttxt.setText(""+count)
     }
 
     override fun getItemCount(): Int {
         return Title.size
-    }
-    fun itemSubtractClick(view: View?) {
-        if (count > 0) counttext = "" + count-- else {}
-    }
-
-    fun itemAddClick(view: View?) {
-        counttext = "" + count++
     }
 }

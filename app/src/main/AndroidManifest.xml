@@ -16,7 +16,7 @@
         <activity
             android:name=".ShoppingCart"
             android:exported="false" />
-       
+
         <activity
             android:name=".Dashboard"
             android:exported="false" />

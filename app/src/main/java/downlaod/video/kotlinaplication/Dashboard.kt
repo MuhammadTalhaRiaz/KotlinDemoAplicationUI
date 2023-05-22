@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -107,13 +106,13 @@ class Dashboard : AppCompatActivity() {
         username  = intent.getStringExtra("userName").toString()
     }
     fun bottomnavigation() {
-        loadFragment(ChatFragment())
+        loadFragment(MainPage())
         bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomNav.setOnItemSelectedListener {
             val fragment: Fragment
             when (it.itemId) {
                 R.id.home -> {
-                    loadFragment(ChatFragment())
+                    loadFragment(MainPage())
                     true
                 }
                 R.id.message -> {
@@ -133,7 +132,7 @@ class Dashboard : AppCompatActivity() {
         bottomNav.setOnItemReselectedListener { item ->
         when (item.itemId) {
             R.id.home -> {
-               loadFragment(ChatFragment())
+               loadFragment(MainPage())
             }
             R.id.message -> {
                 Toast.makeText(this, "Message Item reselected", Toast.LENGTH_SHORT).show()
